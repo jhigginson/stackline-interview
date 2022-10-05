@@ -25,3 +25,5 @@ the graph or table as seen in the mockup
 
 ## My Solution
 I have created a single page application that uses Redux for the main data store and mocks an API call to fetch the data. I chose to implement the sales table and made it sortable by clicking on the headers for each column. For styling I have used Tailwind CSS. 
+
+[Link to live page hosted on Vercel](https://stackline-interview.vercel.app/)
