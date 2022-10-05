@@ -1,3 +1,4 @@
+##Requirements
 Thank you for taking our web developer assessment. To complete the assessment, you will take what is
 provided and create a simple product web page that uses React to produce the view and Redux to
 manage the state.  It should take approximately 2 hours to complete a typical solution, but you may take
@@ -21,3 +22,6 @@ the graph or table as seen in the mockup
 #####Assets to be returned via email within the provided time frame:
 1. A public git repository to view the final code
 2. A public URL to view the web page --- can be hosted on GitHub Pages, AWS, Vercel, etc.
+
+##My Solution
+I have created a single page application that uses Redux for the main data store and mocks an API call to fetch the data. I chose to implement the sales table and made it sortable by clicking on the headers for each column. For styling I have used Tailwind CSS. 
