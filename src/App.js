@@ -1,56 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useEffect } from 'react';
+import logo from './stackline_logo.svg';
+import { useDispatch } from 'react-redux';
+import { getProductsData } from './store/productsSlice';
+import ProductDetails from './components/ProductDetails';
+import SalesTable from './components/SalesTable';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProductsData());
+  }, [dispatch]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+    <div className="h-screen flex flex-col text-slate-600">
+      <header className="basis-24 shrink-0 bg-[#052748]">
+        <img src={logo} alt="Stackline" className="w-48 h-full ml-6" />
       </header>
+      <main className="bg-[#f5f7fa] h-fit flex flex-col lg:flex-row gap-6 py-20 px-6">
+        <section id="product" className="bg-white shrink-0 basis-[400px] shadow-lg">
+          <ProductDetails />
+        </section>
+        <section id="table" className="bg-white w-full shadow-lg" >
+          <SalesTable />
+        </section>
+      </main>
     </div>
   );
 }
